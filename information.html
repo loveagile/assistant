@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="jp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/animatecss/3.5.2/animate.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@600&family=Outfit:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/validation.js"></script>
+    <title>運営者情報</title>
+    <link rel="stylesheet" href="./assets/css/validationEngine.jquery.css" />
+    <script>
+      function tosubmit() {
+        // Getting the value of your text input
+        let ans = [];
+        let inputArray = document.getElementsByTagName("input");
+        for (i = 0; i < inputArray.length; i++) {
+          // if(inputArray[i].getAttribute('name')== null) continue;
+          ans.push({
+            name: inputArray[i].getAttribute("name"),
+            value: inputArray[i].value,
+          });
+        }
+        let selectArray = document.getElementsByTagName("select");
+        for (let i = 0; i < selectArray.length; i++) {
+          ans.push({
+            name: selectArray[i].getAttribute("name"),
+            value: selectArray[i].value,
+          });
+        }
+        let textArray = document.getElementsByTagName("textarea");
+        for (let i = 0; i < textArray.length; i++) {
+          ans.push({
+            name: textArray[i].getAttribute("name"),
+            value: textArray[i].value,
+          });
+        }
+
+        localStorage.setItem("person-info", JSON.stringify(ans));
+        return true;
+      }
+    </script>
+  </head>
+</html>
+
+<body>
+  <!-- Google Tag Manager -->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        "gtm.start": new Date().getTime(),
+        event: "gtm.js",
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != "dataLayer" ? "&l=" + l : "";
+      j.async = true;
+      j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "dataLayer", "GTM-MC24LZVC");
+  </script>
+  <!-- End Google Tag Manager -->
+  <!-- Google Tag Manager (noscript) -->
+  <noscript
+    ><iframe
+      src="https://www.googletagmanager.com/ns.html?id=GTM-MC24LZVC"
+      height="0"
+      width="0"
+      style="display: none; visibility: hidden"
+    ></iframe
+  ></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <main>
+    <div class="modal_cont" id="modal_cont_3">
+      <h3>運営者情報</h3>
+      <p>アシスト運営事務局</p>
+      <p>
+        住所：〒４８６－０８４４<br />
+        愛知県春日井市鳥居松町５丁目７８ <br />
+        担当　鈴木　健太
+      </p>
+      <!-- <a href="javascript:void(0);" class="close">ウィンドウを閉じる</a> -->
+    </div>
+  </main>
+</body>
